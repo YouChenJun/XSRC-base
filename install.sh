@@ -106,7 +106,7 @@ rm -rf $BASE_PATH && git clone --quiet --depth=1 https://mirror.ghproxy.com/http
 if [ ! -d "$BASE_PATH" ]; then
     git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/XSRC-base $BASE_PATH
 fi
-
+mkdir -p $HOME/osmedeus-base/binaries/ 2>&1 > /dev/null
 [ -z "$(which osmedeus)" ] && osmBin=/usr/local/bin/osmedeus || osmBin=$(which osmedeus)
 announce "Setup Osmedeus Core Engine:\033[0m $osmBin"
 unzip -q -o -j $BASE_PATH/dist/osmedeus-linux-amd64.zip -d $BASE_PATH/dist/
