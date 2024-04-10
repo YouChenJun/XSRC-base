@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh | bash
-INSTALL_EXT_BINARY="https://raw.githubusercontent.com/YouChenJun/XSRC-base/main/data/scripts/install-external-binaries.sh"
+INSTALL_EXT_BINARY="https://mirror.ghproxy.com/https://raw.githubusercontent.com/YouChenJun/XSRC-base/main/data/scripts/install-external-binaries.sh"
 
 # global stuff
 BASE_PATH="$HOME/osmedeus-base"
