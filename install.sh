@@ -123,6 +123,7 @@ fi
 
 install_banner "External binaries"
 rm -rf $TMP_DIST && mkdir -p $TMP_DIST 2>/dev/null
+mkdir -p $HOME/osmedeus-base/binaries/ 2>&1 > /dev/null
 
 install_banner "massdns"
 cd $BINARIES_PATH
