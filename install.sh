@@ -100,12 +100,12 @@ if [ -d "$HOME/osmedeus-base/data" ]; then
     mv $HOME/osmedeus-base $BAK_DIST
 fi
 
-announce "Cloning Osmedeus base repo:\033[0m https://github.com/YouChenJun/XSRC-base"
+announce "Cloning Osmedeus base repo:\033[0m https://mirror.ghproxy.com/https://github.com/YouChenJun/XSRC-base"
 rm -rf $BASE_PATH && git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/XSRC-base $BASE_PATH
 # # retry to clone in case of anything wrong with the connection
 if [ ! -d "$BASE_PATH" ]; then
     git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/XSRC-base $BASE_PATH
-fi
+fi  
 
 [ -z "$(which osmedeus)" ] && osmBin=/usr/local/bin/osmedeus || osmBin=$(which osmedeus)
 announce "Setup Osmedeus Core Engine:\033[0m $osmBin"
