@@ -84,7 +84,7 @@ fi
 
 if [[ $(uname -p) == "arm" || $(uname -p) == "aarch64" ]]; then
     echo -e "\033[1;34m[!] An ARM-based machine has been identified. The installation will now proceed with the ARM-specific script.\033[0m"
-    bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-arm.sh)
+    bash <(curl -fsSL https://mirror.ghproxy.com/https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-arm.sh)
     exit 1
 fi
 
