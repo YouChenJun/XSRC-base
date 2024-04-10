@@ -131,7 +131,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install massdns -q
   cp $(which massdns) $BINARIES_PATH/massdns
 else
-  git clone --quiet https://github.com/blechschmidt/massdns build-massdns
+  git clone --quiet https://mirror.ghproxy.com/https://github.com/blechschmidt/massdns build-massdns
   cd build-massdns
   make 2>&1 >/dev/null
   cp bin/massdns /usr/local/bin/ 2>&1 >/dev/null
@@ -145,15 +145,15 @@ source "$TMP_DIST/external-binaries.sh"
 install_banner "findomain"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if [[ $(uname -p) == "arm" ]]; then
-    download $TMP_DIST/findomain.zip https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-osx-arm64.zip
+    download $TMP_DIST/findomain.zip https://mirror.ghproxy.com/https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-osx-arm64.zip
   else
-    download $TMP_DIST/findomain.zip https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-osx-x86_64.zip
+    download $TMP_DIST/findomain.zip https://mirror.ghproxy.com/https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-osx-x86_64.zip
   fi
 else
   if [[ $(uname -p) == "arm" || $(uname -p) == "aarch64" ]]; then
-    download $TMP_DIST/findomain.zip https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-linux.zip
+    download $TMP_DIST/findomain.zip https://mirror.ghproxy.com/https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-linux.zip
   else
-    download $TMP_DIST/findomain.zip https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-aarch64.zip
+    download $TMP_DIST/findomain.zip https://mirror.ghproxy.com/https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-aarch64.zip
   fi
   extractZip $TMP_DIST/findomain.zip
 fi
@@ -182,10 +182,10 @@ cp $(which semgrep) $BINARIES_PATH/semgrep
 rm -rf $BINARIES_PATH/LICENSE*  $BINARIES_PATH/README* $BINARIES_PATH/config.ini 2>/dev/null
 
 install_banner "auxiliary tools"
-git clone --quiet --depth=1 https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
 # retry to clone in case of anything wrong with the connection
 if [ ! -d "$TMP_DIST/auxs-binaries" ]; then
-git clone --quiet --depth=1 https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
 fi
 
 cp $TMP_DIST/auxs-binaries/releases/* $BINARIES_PATH/
@@ -199,17 +199,17 @@ rm -rf ~/.osmedeus/server/* >/dev/null 2>&1
 mkdir -p ~/.osmedeus/server >/dev/null 2>&1
 cp -R $BASE_PATH/ui ~/.osmedeus/server/ui >/dev/null 2>&1
 
-install_banner "Osmedeus Community Workflow:\033[0m https://github.com/osmedeus/osmedeus-workflow"
+install_banner "Osmedeus Community Workflow:\033[0m https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow"
 rm -rf $BASE_PATH/workflow >/dev/null 2>&1
-git clone --quiet --depth=1 https://github.com/osmedeus/osmedeus-workflow $BASE_PATH/workflow
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow $BASE_PATH/workflow
 ## retry to clone in case of anything wrong with the connection
 if [ ! -d "$BASE_PATH/workflow" ]; then
-    git clone --quiet --depth=1 https://github.com/osmedeus/osmedeus-workflow $BASE_PATH
+    git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow $BASE_PATH
 fi
 
 announce "Downloading Vulnerability templates"
 jaeles config init >/dev/null 2>&1
-rm -rf ~/nuclei-templates && git clone --quiet --depth=1 https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates >/dev/null 2>&1
+rm -rf ~/nuclei-templates && git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/projectdiscovery/nuclei-templates.git ~/nuclei-templates >/dev/null 2>&1
 
 if [ -d "$BAK_DIST/data" ]; then
     announce "Updating old data + cloud config ..."
