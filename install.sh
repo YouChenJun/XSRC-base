@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# curl -fsSL https://raw.githubusercontent.com/YouChenJun/XSRC-base/master/install.sh | bash
-INSTALL_EXT_BINARY="https://raw.githubusercontent.com/YouChenJun/XSRC-base/main/data/scripts/install-external-binaries.sh"
+# curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh | bash
+INSTALL_EXT_BINARY="https://raw.githubusercontent.com/osmedeus/osmedeus-base/main/data/scripts/install-external-binaries.sh"
 
 # global stuff
 BASE_PATH="$HOME/osmedeus-base"
@@ -84,7 +84,7 @@ fi
 
 if [[ $(uname -p) == "arm" || $(uname -p) == "aarch64" ]]; then
     echo -e "\033[1;34m[!] An ARM-based machine has been identified. The installation will now proceed with the ARM-specific script.\033[0m"
-    bash <(curl -fsSL https://raw.githubusercontent.com/YouChenJun/XSRC-base/master/install-arm.sh)
+    bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install-arm.sh)
     exit 1
 fi
 
@@ -105,7 +105,7 @@ rm -rf $BASE_PATH && git clone --quiet --depth=1 https://mirror.ghproxy.com/http
 # # retry to clone in case of anything wrong with the connection
 if [ ! -d "$BASE_PATH" ]; then
     git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/XSRC-base $BASE_PATH
-fi  
+fi
 
 [ -z "$(which osmedeus)" ] && osmBin=/usr/local/bin/osmedeus || osmBin=$(which osmedeus)
 announce "Setup Osmedeus Core Engine:\033[0m $osmBin"
