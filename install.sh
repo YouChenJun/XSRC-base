@@ -182,10 +182,10 @@ cp $(which semgrep) $BINARIES_PATH/semgrep
 rm -rf $BINARIES_PATH/LICENSE*  $BINARIES_PATH/README* $BINARIES_PATH/config.ini 2>/dev/null
 
 install_banner "auxiliary tools"
-git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-binaries $TMP_DIST/auxs-binaries
 # retry to clone in case of anything wrong with the connection
 if [ ! -d "$TMP_DIST/auxs-binaries" ]; then
-git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/auxs-binaries $TMP_DIST/auxs-binaries
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-binaries $TMP_DIST/auxs-binaries
 fi
 
 cp $TMP_DIST/auxs-binaries/releases/* $BINARIES_PATH/
@@ -199,12 +199,12 @@ rm -rf ~/.osmedeus/server/* >/dev/null 2>&1
 mkdir -p ~/.osmedeus/server >/dev/null 2>&1
 cp -R $BASE_PATH/ui ~/.osmedeus/server/ui >/dev/null 2>&1
 
-install_banner "Osmedeus Community Workflow:\033[0m https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow"
+install_banner "Osmedeus Community Workflow:\033[0m https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test"
 rm -rf $BASE_PATH/workflow >/dev/null 2>&1
-git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow $BASE_PATH/workflow
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test $BASE_PATH/workflow
 ## retry to clone in case of anything wrong with the connection
 if [ ! -d "$BASE_PATH/workflow" ]; then
-    git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/osmedeus/osmedeus-workflow $BASE_PATH
+    git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test $BASE_PATH
 fi
 
 announce "Downloading Vulnerability templates"
