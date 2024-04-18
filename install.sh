@@ -199,12 +199,12 @@ rm -rf ~/.osmedeus/server/* >/dev/null 2>&1
 mkdir -p ~/.osmedeus/server >/dev/null 2>&1
 cp -R $BASE_PATH/ui ~/.osmedeus/server/ui >/dev/null 2>&1
 
-install_banner "Osmedeus Community Workflow:\033[0m https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test"
+install_banner "Osmedeus Community Workflow:\033[0m https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow"
 rm -rf $BASE_PATH/workflow >/dev/null 2>&1
-git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test $BASE_PATH/workflow
+git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow $BASE_PATH/workflow
 ## retry to clone in case of anything wrong with the connection
 if [ ! -d "$BASE_PATH/workflow" ]; then
-    git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow/tree/test $BASE_PATH
+    git clone --quiet --depth=1 https://mirror.ghproxy.com/https://github.com/YouChenJun/Scan-workflow $BASE_PATH
 fi
 
 announce "Downloading Vulnerability templates"
